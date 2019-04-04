@@ -1,0 +1,21 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+    <div style="display:flex;justify-content:center;align-items:center;">
+    <div class="card card-container">
+    <div class = "card-title card-header">
+        <h4>{% trans 'Student Registeration' %}</h4>
+    </div>
+        <hr>
+    <form action="/accounts/sign-up/" method="post" id="sign-in">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button class="btn btn-success">{% trans 'Register' %}</button> &emsp;
+        Already have an account ? <a href="{% url 'accounts:log_in' %}">{% trans 'Sign in' %}</a>
+    </form>
+    </div>
+    </div>
+{% endblock %}

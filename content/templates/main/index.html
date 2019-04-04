@@ -1,0 +1,86 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load static %}
+
+{% load i18n %}
+
+{% block content %}
+<section id="about" class="section-bg" xmlns:text-align="http://www.w3.org/1999/xhtml">
+        <div class="container-fluid wow fadeInLeft">
+
+            <div class="section-header">
+                <span class="section-divider"></span>
+            </div>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="about-tab" data-toggle="tab" href="#about-IIITU" role="tab" aria-controls="about" aria-selected="true">About IITU</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="director-tab" data-toggle="tab" href="#director" role="tab" aria-controls="home" aria-selected="false">Director's Desk</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="student-tab" data-toggle="tab" href="#students" role="tab" aria-controls="sess" aria-selected="false">Students</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="about-IIITU" role="tabpanel" aria-labelledby="about-tab" style="background-color:#E4E6E8; padding:0.5rem 0.5rem;">
+                    <br><h3 style="text-align: center;">About IIITU</h3><hr><p>Indian Institute of information technology Una (Saloh), popularly known as IIITU, was established in the year 2015 by the Central government of India and MHRD under the Public Private Partnership Act. MHRD, Govt. of India, Govt. of Himachal Pradesh, HP Transmission Corporation Limited, HP Power Corporation limited act as partners to the institute.NIT Hamirpur has been given the responsibility to mentor IIITU. Presently, IIITU is operating from the NIT Hamirpur campus until its new campus is fully set up in Una. </p>
+                    <p>Indian Institute of Information Technology Una (IIIT, Una) is one of the Indian Institutes of Information
+                Technology located at Una, Himachal Pradesh. The academic session of IIIT Una started from its temporary
+                campus at National Institute of Technology, Hamirpur from year 2014. IIIT Una is a joint venture
+                of the Ministry of Human Resource Development, Government of India, the Govt. of Himachal Pradesh, with
+                Industries in Public-Private Partnership model. On 18 March 2013, Ministry of Human Resource Development,
+                Government of India introduced a bill in the Parliament to establish 20 new Indian Institute of Information Technology's in
+                different parts of the Country. As per the bill, MHRD will establish the 20 new IIITs under the Public Private
+                Partnership (PPP) mode partnering with respective state governments and industry partners. The new IIITs
+                are envisaged to be Institutes of National Importance. Aimed at generating highly competent manpower of
+                global standards for the Information Technology Industry, the institutes are also expected to act as major
+                catalyst to develop new knowledge in the field of Information Technology.
+                Indian Institute of Information Technology – Una, Himachal Pradesh is amongst 20 new IIITs approved by
+                MHRD and started to intake students from 2014.
+                The admission to IIIT is through Central Seat allocation Board (CSAB). The students are allotted admission
+                by CSAB based on their Joint Entrance Examination (JEE-Main) ranks. The Indian Institute of Information
+                Technology, Una, Himachal Pradesh is listed in the CSAB website under List of participating institutes in
+                Other Central Government / State Government Funded Technical Institutes.
+                The Institute presently offers B.Tech in Computer Science and Engineering (CSE) and B.Tech in
+                Electronics, Communication Engineering (ECE) and Information Technology(IT).</p>
+                </div>
+
+                <div class="tab-pane fade show" id="director" role="tabpanel" aria-labelledby="director-tab" style="background-color:#E4E6E8; padding:0.5rem 0.5rem;">
+                    <br>
+                    <h3 style="text-align: center;">Message from the Director's Desk</h3><hr>
+                    <div class="col-4" style="float: left; display:inline-block;">
+                        <img src="{% static 'images/director.jpg' %}" width="100%" height="100% ">
+
+                    </div>
+
+                    <div id="director-desk" class="col-8" style="display:inline-block">Evolving a brand-name takes years of nurturing, hard work and passion. The global recognition of the IIIT-brand is a
+                  fruition of such an endeavour by the undergraduate and post-graduate students, and their teachers and mentors
+                  . Each IIITan feels proud to take the brand to greater heights by competing with the best in the discipline. IIIT
+                  Una, has brought in the culture of innovation among its students.
+                  These students have received training that is ‘deep in depth’, yet ‘wide in breadth’.  They gained experience by
+                  working either ‘at the industry’ or ‘for the industry’. Such training has moulded them into better qualified
+                  . Therefore, I am quite confident that our students shall perform the best on any platform and do justice to the trust
+                  placed on them. I, on the behalf of the entire fraternity of IIIT Una, cordially invite companies/organizations
+                  for campus placement and summer internships for our students. I sincerely look forward to establishing a fruitful and
+                  long standing relationship.
+                    <br><br>
+                    <b>Prof. S. Selvankumar <br>Director, IIIT Una</b><br>
+                    <br><br>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade show" id="students" role="tabpanel" aria-labelledby="student-tab" style="background-color:#E4E6E8; padding:0.5rem 0.5rem;">
+                    <br>
+                    <h3 style="text-align: center;">Our Students</h3><hr>
+                    <p>
+                        list of students <a href="#">Session 2016-21</a><br>
+                        list of students <a href="#">Session 2017-22</a><br>
+                        list of students <a href="#">Session 2018-23</a><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+</section>
+
+{% endblock %}

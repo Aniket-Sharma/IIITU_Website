@@ -1,0 +1,190 @@
+{% load staticfiles %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% get_current_language as language_code %}
+
+<!DOCTYPE html>
+<html lang="{{ language_code }}">
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Indian Institute of information Technology - Placement and training cell.">
+    <meta name="author" content="Aniket Sharma">
+
+    <link rel="icon" href="{% static 'iiitulogo.png' %}">
+
+    <title>Placement and Training Cell-IIITU</title>
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.grid.css' %}" rel="stylesheet">
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!--jquery-->
+    <script src="{% static 'vendor/jquery/jquery-3.3.1.js' %}"></script>
+
+    <!--adding vue -->
+
+<!--     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ -->
+
+
+</head>
+
+<body>
+
+  <div class="hidden" id="header">
+    <div id="logo" class="col-sm-2" style="display:inline-block;">
+      <h1><a href="/" class="scrollto"><img src="{% static 'iiitulogo.png' %}" width=150% height=150% alt="Office of Training and Placement, NIT Hamirpur" title="Office of Training and Placement, NIT Hamirpur"></a></h1>
+    </div>
+    <div id="logo-info" class="col-sm-10 text-left" ><br>
+      <h3>Training and Placement Cell<br>Indian Institute of information Technology Una</h3>
+      <!-- <h3>Indian Institute of information Technology Una<br>भारतीय सूचना प्रौद्योगिकी संस्थान ऊना</h3> -->
+      </div>
+  </div>
+  <br>
+  <div class="navbar-IIITU col align-self-center">
+      <div class="wrap" id="wrap">
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <!--<a class="navbar-brand col-1" href= "{% url 'home' %}"><img src="{% static 'iiitulogo.png' %}" width="50px" height="50px"></a>-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto col-10">
+              <!-- <div class="vl"></div> -->
+              <li class="nav-item col-3">
+                  <a class="nav-link" href="{% url 'home' %}">{% trans 'Home' %}</a>
+              </li>
+              <!-- <div class="vl"></div> -->
+              <li class="nav-item col-3 ">
+                  <a class="nav-link " href="{% url 'index' %}">{% trans 'About' %}</a>
+              </li>
+              <!-- <div class="vl"></div> -->
+              <li class="nav-item col-3">
+                  <a class="nav-link" href="{% url 'placements' %}">{% trans 'Placements' %}</a>
+                  <!--<div class="dropdown-menu">-->
+                        <!--<a class="dropdown-item" href="#">Placement Procedure</a>-->
+                        <!--<a class="dropdown-item" href="#">Placement Record</a>-->
+                        <!--<a class="dropdown-item" href="#">Past Recruiters</a>-->
+                        <!--<a class="dropdown-item" href="#">Facilities for Recruiters</a>-->
+                        <!--&lt;!&ndash;<div class = "dropdown-divider"> </div>&ndash;&gt;-->
+                    <!--</div>-->
+             </li>
+              <!-- <div class="vl"></div> -->
+              <li class="nav-item  col-3">
+                  <!--<a class="nav-link dropdown-toggle" href="{% url 'reach' %}"  role="button" data-toggle="dropdown" aria-haspopup="True" aria-expanded="True">{% trans 'Placements' %}</a>-->
+                  <!--<div class="dropdown-menu">-->
+                        <!--<a class="dropdown-item" href="#">Placement Procedure</a>-->
+                        <!--<a class="dropdown-item" href="#">Placement Record</a>-->
+                        <!--<a class="dropdown-item" href="#">Past Recruiters</a>-->
+                        <!--<a class="dropdown-item" href="#">Facilities for Recruiters</a>-->
+                        <!--&lt;!&ndash;<div class = "dropdown-divider"> </div>&ndash;&gt;-->
+                    <!--</div>-->
+                  <a class="nav-link" href="{% url 'reach' %}">{% trans 'Our Team' %}</a>
+              </li>
+              <!-- <div class="vl"></div> -->
+              {% if not request.user.is_authenticated %}
+              <li class="nav-item col-3 dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="True" aria-expanded="True">{% trans 'Login/Register' %}</a>
+                  <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'accounts:student_log_in' %}">Student Login</a>
+                        <a class="dropdown-item" href="{% url 'accounts:log_in' %}">Recruiter Login</a>
+                        <a class="dropdown-item" href="{% url 'accounts:student_sign_up' %}">Student Registration</a>
+                        <a class="dropdown-item" href="{% url 'accounts:sign_up' %}">Recruiter Registration</a>
+                    </div>
+                </li>
+              {% else %}
+                <li class="nav-item col-3">
+                    <a class="nav-link" href="{% url 'accounts:log_out' %}">{% trans 'Log out' %}</a>
+                </li>
+              {% endif %}
+          </ul>
+          <!-- <div class="vl"></div> -->
+      </div>
+  </nav>
+  </div>
+  </div>
+  <br>
+
+<div class="container-fluid">
+
+    {% bootstrap_messages %}
+
+    {% block content %}
+
+    {% endblock %}
+
+</div>
+  <br><br>
+<!-- footer -->
+          <footer>
+          <div style="background-color: #222227; color: #FFFFFF; border-radius: 2%;">
+              <br><br>
+              <div class="container">
+                  <div class="row">
+                      <div class="col-sm-2">
+                          <img src="{% static 'iiitulogo.png' %}" alt="iiitu_logo" class="img-fluid">
+                  </div>
+                      <div id="footer_message" class="container col-sm-4">
+                          <p>Message for the Recruiters</p>
+                          <ul class="list-unstyled list-inline text-center py-2">
+                            <li class="list-inline-item">
+                              <h5 class="mb-1">Start Recruiting now : </h5>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="{% url 'accounts:sign_up' %}" class="btn btn-outline-white btn-rounded" style="color:white; border-color: white; border-radius: 20%;">
+                                <h3>Register</h3></a>
+                            </li>
+                          </ul>
+                          <!-- Call to action -->
+
+                        </div>
+                      <div class="col-sm-3 text-centerssssss">
+                          <h5>Training and Placement Office</h5>
+                          <p class="size1">Ground Floor, Admin Block<br>
+                              National Institute of Technology<br>
+                          Hamirpur, 177005</p>
+
+                          <h5>Phone</h5>
+                          <p class="size1">
+                              +91-11-45854126<br>
+                              +91-11-45857126
+                          </p>
+
+                          <h5>Email</h5>
+                          <p class="size1">placement@admin.iiitu.ac.in</p>
+                      </div>
+                      <br><br>
+              </div>
+          </div>
+          </div>
+    <div class="footer-copyright text-center py-3">© made by:
+      <a href="https://www.hackerearth.com/@aniket147">Aniket Sharma</a>
+    </div>
+
+          </footer>
+
+        <!--($( window ).width() >= 1090)-->
+        <script>
+            $(window).on('scroll', function () {
+                if ($(window).scrollTop() <= $(window).height()/4 && ($( window ).width() >= 1090))
+                    $('.wrap').removeClass('fixed-top');
+                else
+                    $('.wrap').addClass('fixed-top');
+            });
+          </script>
+
+<script src="{% static 'vendor/popper/popper.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+
+</body>
+</html>

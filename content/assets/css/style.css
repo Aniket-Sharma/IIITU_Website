@@ -1,0 +1,66 @@
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.card-container.card {
+    bg-color: blue ;
+    min-width: 50%;
+    max-width: 1500px;
+    padding: 20px 20px  ;
+}
+
+.navbar-IIITU {
+    float:center;
+}
+
+#logo{
+    display: inline-block;
+    background-color: transparent ;
+    padding-left: 9%;
+    padding-top: 0.0rem;
+    padding-bottom: 0rem;
+    margin-right: 3.0rem;
+    float: left;
+}
+
+#logo-info{
+    background-color: transparent ;
+    float: center ;
+    margin-top: 1.5rem;
+    margin-left: 0%;
+}
+#header{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: transparent;
+}
+body{
+  background-color: #D7DAD0;
+  margin-left : 5rem ;
+  margin-right : 5rem ;
+}
+
+.nav-item .centerlize {
+
+}
+
+nav {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background-color: #34495e;
+	border-radius: 8px;
+}
+
+.vl {
+  border-left: 2px solid gray;
+  height: 35px;
+  position: relative;
+  top: 0;
+}
+
